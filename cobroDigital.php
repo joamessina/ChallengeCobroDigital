@@ -22,7 +22,7 @@ class Boleta{
 			#$data =null;
 			$this->idComercio = $idComercio;
 			$this->sid = $sid;
-			$this->metodo = $metodo;
+			$this->metodo_webservice = $metodo;
 			$this->importes = $importes; 
 			$this->fechas = $fechas;
 			$this->concepto = $concepto;
@@ -30,8 +30,8 @@ class Boleta{
 			$this->correo = $correo;
 			$this->documento = $documento;
 			$this->direccion = $direccion;
-			
-			self::webServices($data);
+			print_r($metodo);
+			#self::webServices($data);
 		}
 
 		function obtenerCodigoDeBarras(){
