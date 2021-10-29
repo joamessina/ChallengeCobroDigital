@@ -1,0 +1,22 @@
+Test Programador jr
+
+Este test esta diseñado para ser resuelto con objetos en php, se puede resolver en cualquier otro lenguaje
+El objetivo final es mostrar en pantalla una boleta personalizada en html, que  muestre como minimo el codigo electronico y la imagen del codigo de barras.
+Para hacer esto se te proporcionara un archivo para importar en postman a modo de ejemplo y el manual del webservice de cobro Digital completo.
+
+Tarea:
+
+1- se debe utilizar el metodo crear_boleta_comprador.
+
+2- se debe recuperar el codigo de barras desde obtener_codigo_de_barras, para la imagen se cuenta con un script por ejemplo https://www.cobrodigital.com/wse/bccd/73852040300126030052000180002h.png
+
+3- se debe recuperar el codigo electronico desde obtener_pmc_boleta.
+
+4- debes armar un "cupon de pago" a tu gusto en html utilizando las herramientas antes mencionadas.
+
+Recomendaciones:
+
+Utilizar alguna estructura de clases para resolver el ejercicio.
+parametrizar la mayoria de los datos que se envian al ws.
+subir el resultado a github o similar.
+

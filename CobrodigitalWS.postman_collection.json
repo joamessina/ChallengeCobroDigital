@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "ac530133-bd06-4acf-b7f2-d5ebf0bdb00a",
+		"name": "CobrodigitalWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar transacciones",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"idComercio\": \"HA765587\",\n\"sid\":\n\"XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL\",\n\"metodo_webservice\" : \"consultar_transacciones\",\n\"desde\": \"20200101\",\n\"hasta\": \"20200130\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.cobrodigital.com:14365/ws3",
+					"protocol": "https",
+					"host": [
+						"www",
+						"cobrodigital",
+						"com"
+					],
+					"port": "14365",
+					"path": [
+						"ws3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Barcode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"idComercio\": \"HA765587\",\n\"sid\":\n\"XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL\",\n\"metodo_webservice\" : \"obtener_codigo_de_barras\",\n\"nro_boleta\": \"2342\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.cobrodigital.com:14365/ws3",
+					"protocol": "https",
+					"host": [
+						"www",
+						"cobrodigital",
+						"com"
+					],
+					"port": "14365",
+					"path": [
+						"ws3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener codigo electronico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"idComercio\": \"HA765587\",\n\"sid\":\n\"XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL\",\n\"metodo_webservice\" : \"obtener_pmc_boleta\",\n\"nro_boleta\": \"2342\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.cobrodigital.com:14365/ws3",
+					"protocol": "https",
+					"host": [
+						"www",
+						"cobrodigital",
+						"com"
+					],
+					"port": "14365",
+					"path": [
+						"ws3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear boleta Comprador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"idComercio\":\"HA765587\",\n\"sid\":\"XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL\"\n, \"metodo_webservice\":\"generar_boleta_comprador\"\n,\"importes\":[{\"importe_1\":100}],\n\"fechas\":[{\"fecha_1\":\"30/07/2020\"}],\n\"concepto\":\"Prueba\",\n\"apellido\":\"Perez\",\n\"correo\":\"info@cobrodigital.com\"\n,\"documento\":\"22333444\",\n\"direccion\":\"Calle 1 3584\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cobrodigital.com:14365/ws3",
+					"protocol": "https",
+					"host": [
+						"cobrodigital",
+						"com"
+					],
+					"port": "14365",
+					"path": [
+						"ws3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener html boleta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"idComercio\": \"HA765587\",\n\"sid\": \"XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL\",\n\"metodo_webservice\" : \"obtener_boleta_html\",\n\"nro_boleta\": \"2342\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.cobrodigital.com/ws3",
+					"protocol": "https",
+					"host": [
+						"www",
+						"cobrodigital",
+						"com"
+					],
+					"path": [
+						"ws3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
