@@ -1,8 +1,10 @@
 <?php 
+
 class Boleta{
 		
 		public $idComercio = null;
 		public $sid = NULL;
+		public $metodo= NULL;
 		public $importes = NULL;
 		public $fechas = NULL;
 		public $concepto = NULL;
@@ -16,10 +18,11 @@ class Boleta{
 			
 		}
 
-		function crearBoletaComprador($idComercio,$sid,$importes,$fechas,$concepto,$apellido,$correo,$documento,$direccion){
+		function crearBoletaComprador($idComercio,$sid,$metodo,$importes,$fechas,$concepto,$apellido,$correo,$documento,$direccion){
 			#$data =null;
 			$this->idComercio = $idComercio;
 			$this->sid = $sid;
+			$this->metodo = $metodo;
 			$this->importes = $importes; 
 			$this->fechas = $fechas;
 			$this->concepto = $concepto;
@@ -27,7 +30,7 @@ class Boleta{
 			$this->correo = $correo;
 			$this->documento = $documento;
 			$this->direccion = $direccion;
-
+			
 			self::webServices($data);
 		}
 
@@ -74,6 +77,6 @@ class Boleta{
 	$UnaBoleta = new Boleta();
 	
 	$prueba = $UnaBoleta->crearBoletaComprador("HA765587","XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL","generar_boleta_comprador",100,"30/07/2020","Prueba","Perez","info@cobrodigital.com","22333444","Calle 1 3584");
-
 	print_r($prueba);
+	echo "alo";
  ?>
