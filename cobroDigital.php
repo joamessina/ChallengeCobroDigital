@@ -4,7 +4,7 @@ class Boleta{
 		
 		public $idComercio = null;
 		public $sid = NULL;
-		public $metodo= NULL;
+		public $metodo_webservice= NULL;
 		public $importes = NULL;
 		public $fechas = NULL;
 		public $concepto = NULL;
@@ -18,11 +18,10 @@ class Boleta{
 			
 		}
 
-		function crearBoletaComprador($idComercio,$sid,$metodo,$importes,$fechas,$concepto,$apellido,$correo,$documento,$direccion){
-			#$data =null;
+		function crearBoletaComprador($idComercio,$sid,$metodo_webservice,$importes,$fechas,$concepto,$apellido,$correo,$documento,$direccion){
 			$this->idComercio = $idComercio;
 			$this->sid = $sid;
-			$this->metodo_webservice = $metodo;
+			$this->metodo_webservice = "generar_boleta_comprador";
 			$this->importes = $importes; 
 			$this->fechas = $fechas;
 			$this->concepto = $concepto;
@@ -30,8 +29,18 @@ class Boleta{
 			$this->correo = $correo;
 			$this->documento = $documento;
 			$this->direccion = $direccion;
-			print_r($metodo);
-			#self::webServices($data);
+			$data['idComercio'] = $this->idComercio;
+			$data['sid'] = $this->sid;
+			$data['metodo_webservice'] = $this->metodo_webservice;
+			$data['importes'] = array(array("importe_1"=> $this->importes));
+			$data['fechas'] = array(array("fecha_1"=> $this->fechas));
+			$data['concepto'] = $this->concepto;
+			$data['apellido'] = $this->apellido;
+			$data['correo'] = $this->correo;
+			$data['documento'] = $this->documento;
+			$data['direccion'] = $this->direccion;
+			#print_r($metodo_webservice);
+			self::webServices($data);
 		}
 
 		function obtenerCodigoDeBarras(){
@@ -57,7 +66,7 @@ class Boleta{
 				CURLOPT_HTTPHEADER     => array('Content-Type: application/json'),
 				CURLOPT_POSTFIELDS     => json_encode($data)
 			));
-
+			echo json_encode($data);
 			$respuesta = curl_exec($cliente);
 
 			$info = curl_getinfo($cliente); 
@@ -78,5 +87,5 @@ class Boleta{
 	
 	$prueba = $UnaBoleta->crearBoletaComprador("HA765587","XAKXYOLYYYCVGHQHNLZHNIVPJUCDKPRMQBEKCFBPZKTMJTKBSKJIVBEJCTL","generar_boleta_comprador",100,"30/07/2020","Prueba","Perez","info@cobrodigital.com","22333444","Calle 1 3584");
 	print_r($prueba);
-	echo "alo";
+	#echo "alo";
  ?>
